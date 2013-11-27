@@ -1,6 +1,8 @@
 Nginx Sticky Module 
 --
 
+*See PATCHES.md for applied patches*
+
 Description:
 	A nginx module to add a sticky cookie to be always forwarded the the same
 	upstream server.
