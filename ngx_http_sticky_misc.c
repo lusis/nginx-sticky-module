@@ -16,7 +16,7 @@
 	#define ngx_str_set(str, text) (str)->len = sizeof(text) - 1; (str)->data = (u_char *) text
 #endif
 
-static cookie_expires(char *str, size_t size, time_t t)
+static int cookie_expires(char *str, size_t size, time_t t)
 {
 	char *months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 	char *wdays[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
