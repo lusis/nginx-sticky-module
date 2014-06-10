@@ -1,0 +1,14 @@
+--- nginx-sticky-module-read-only/ngx_http_sticky_misc.c        Tue Apr  1 23:58:58 2014
++++ nginx-sticky-module-nginx-sticky-module-1.2/ngx_http_sticky_misc.c  Thu Feb  6 09:48:56 2014
+@@ -278,8 +278,11 @@
+        if (digest->data == NULL) {
+                return NGX_ERROR;
+        }
++#if defined(nginx_version) && nginx_version >= 1005003
++       digest->len = ngx_sock_ntop(in, sizeof(struct sockaddr_in), digest->data, len, 1);
++#else
+        digest->len = ngx_sock_ntop(in, digest->data, len, 1);
+-       return NGX_OK;
++#endif
+        return NGX_OK;
+ }
