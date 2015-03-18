@@ -4,7 +4,7 @@ Nginx Sticky Module
 *See PATCHES.md for applied patches*
 
 Description:
-	A nginx module to add a sticky cookie to be always forwarded the the same
+	A nginx module to add a sticky cookie to be always forwarded to the same
 	upstream server.
 
 	When dealing with several backend servers, it's sometimes useful that one
